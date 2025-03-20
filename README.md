@@ -35,8 +35,10 @@ The project focuses on effective document-based question answering using RAG (Re
 
 ## 🛠️ Technologies Used
 
-- Python 3.8+
-- Open-source LLM integration
+- Python 3.12+
+- OpenGVLab/InternVL2_5-8B-MPO-AWQ (quantized LLM)
+- vLLM for efficient LLM serving
+- UV package manager for dependency management
 - LangChain framework for LLM orchestration
 - PyPDF for document processing
 - Milvus for vector database storage
@@ -60,46 +62,53 @@ git clone https://github.com/aakash4305/ChatBot.git
 cd ChatBot
 ```
 
-2. Create and activate a virtual environment:
+2. Install UV package manager:
 ```bash
-python -m venv venv
-# For Windows
-venv\Scripts\activate
-# For macOS/Linux
-source venv/bin/activate
+curl -sSf https://astral.sh/uv/install.sh | bash
 ```
 
-3. Install the required packages:
+3. Set up virtual environment and install dependencies:
 ```bash
-pip install -r requirements.txt
+uv pip install vllm
+uv sync
+source .venv/bin/activate
 ```
 
-   Requirements include:
-   ```
-   requires-python = ">=3.12"
-   dependencies = [
-       "gradio>=5.21.0",
-       "langchain>=0.3.20",
-       "langchain-community>=0.3.19",
-       "pymilvus>=2.5.5",
-       "sentence-transformers>=3.4.1",
-       "unstructured[pdf]>=0.17.0",
-       "vllm",
-   ]
-   ```
+4. Download the necessary research papers and place them in the project directory.
 
-4. Download the necessary research papers and place them in the `data` directory.
+### Detailed Requirements
+```
+requires-python = ">=3.12"
+dependencies = [
+    "gradio>=5.21.0",
+    "langchain>=0.3.20",
+    "langchain-community>=0.3.19",
+    "pymilvus>=2.5.5",
+    "sentence-transformers>=3.4.1",
+    "unstructured[pdf]>=0.17.0",
+    "vllm",
+]
+```
 
 ## 🏃 Usage
 
-1. Start the application:
+1. Start the vLLM server (in one terminal):
 ```bash
-python app.py
+# If you need to stop existing vLLM processes first
+pkill vllm
+
+# Start the server with the quantized model
+vllm serve OpenGVLab/InternVL2_5-8B-MPO-AWQ --trust-remote-code --quantization awq --dtype half
 ```
 
-2. Open your web browser and navigate to the URL displayed in the terminal (typically http://localhost:8501).
+2. Run the chatbot (in another terminal):
+```bash
+uv run main.py -m OpenGVLab/InternVL2_5-8B-MPO-AWQ --pdf-file SlamonetalSCIENCE1987.pdf --use-llm-eval
+```
 
-3. Enter your questions about the research paper in the input field and receive comprehensive answers.
+3. Open your web browser and navigate to the URL displayed in the terminal (typically http://localhost:8001).
+
+4. Enter your questions about the research paper in the input field and receive comprehensive answers.
 
 ## 📊 Detailed Evaluation System
 
