@@ -47,7 +47,7 @@ The project focuses on effective document-based question answering using RAG (Re
 
 To run this chatbot, you need:
 
-- Python 3.8 or higher
+- Python 3.12 or higher
 - Git
 - 8GB RAM (minimum)
 - Internet connection (for model downloads if applicable)
@@ -73,6 +73,20 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
+
+   Requirements include:
+   ```
+   requires-python = ">=3.12"
+   dependencies = [
+       "gradio>=5.21.0",
+       "langchain>=0.3.20",
+       "langchain-community>=0.3.19",
+       "pymilvus>=2.5.5",
+       "sentence-transformers>=3.4.1",
+       "unstructured[pdf]>=0.17.0",
+       "vllm",
+   ]
+   ```
 
 4. Download the necessary research papers and place them in the `data` directory.
 
