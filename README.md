@@ -161,7 +161,7 @@ The system collects questions, stores chatbot responses, and evaluates them agai
 
 ### Gradio UI Screenshots
 
-The Gradio interface provides an intuitive way for users to interact with the chatbot. The empty chat interface when the application is first launched shows a clean design with a response timedisplay and chat input area:
+The Gradio interface provides an intuitive way for users to interact with the chatbot. The empty chat interface when the application is first launched shows a clean design with a response time-display and chat input area:
 
 <img src="Fig3_Chatbot.png" width="700" >
 
@@ -173,7 +173,7 @@ Example of scientific questions about the research paper and the chatbot’s res
 
 <img src="Fig5_Chatbot.png" width="700" >
 
-The feedback collection interface for gathering user satisfaction data includes a rating slider, comment field, andsubmission button:
+The feedback collection interface for gathering user satisfaction data includes a rating slider, comment field, and submission button:
 
 <img src="Fig6_Chatbot.png" width="700" >
 
