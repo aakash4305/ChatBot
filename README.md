@@ -108,7 +108,11 @@ uv run main.py -m OpenGVLab/InternVL2_5-8B-MPO-AWQ --pdf-file SlamonetalSCIENCE1
 
 3. Open your web browser and navigate to the URL displayed in the terminal (typically http://localhost:8001).
 
-4. Enter your questions about the research paper in the input field and receive comprehensive answers.
+4. Open your web browser and navigate to the URLs displayed in the terminal:
+   - Local URL: http://127.0.0.1:8001
+   - Public URL: https://b9504b4be062d8209.gradio.live (your actual URL may differ)
+
+5. Enter your questions about the research paper in the input field and receive comprehensive answers.
 
 ## 📊 Detailed Evaluation System
 
@@ -137,11 +141,15 @@ The chatbot implements a comprehensive evaluation system based on key business m
   - Qualitative comment collection
   - Trend analysis over time
 
-### Continuous Improvement Process
+### Evaluation Results
 
-- Built-in feedback collection mechanism
-- Performance data aggregation and analysis
-- KPI reporting with actionable insights
+After running the evaluation, detailed metrics are saved to `evaluation_metrics.json`. The chatbot interface is accessible at:
+- Local URL: http://127.0.0.1:8001
+- Public URL: https://b9504b4be062d8209.gradio.live
+
+The evaluation system distinguishes between two key metrics:
+- **LLM Evaluation Accuracy**: The percentage of responses judged as "correct"
+- **Average LLM Score**: The mean score (0-1) across all evaluations, indicating overall quality
 
 ## 🔬 Technical Implementation
 
