@@ -149,6 +149,34 @@ The evaluation system distinguishes between two key metrics:
 - **LLM Evaluation Accuracy**: The percentage of responses judged as "correct"
 - **Average LLM Score**: The mean score (0-1) across all evaluations, indicating overall quality
 
+## Terminal and UI Outputs
+### Terminal outputs
+The system provides a comprehensive JSON file management interface for handling chatbot responses, groundtruths, and evaluation metrics:
+
+<img src="Fig1_Chatbot.png" width="700" >
+
+The system collects questions, stores chatbot responses, and evaluates them against ground truths:
+
+<img src="Fig2_Chatbot.png" width="700" >
+
+### Gradio UI Screenshots
+
+The Gradio interface provides an intuitive way for users to interact with the chatbot. The empty chat interface when the application is first launched shows a clean design with a response timedisplay and chat input area:
+
+<img src="Fig3_Chatbot.png" width="700" >
+
+Initial greeting exchange with the chatbot demonstrates the system’s ability to handle conversational interactions:
+
+<img src="Fig4_Chatbot.png" width="700" >
+
+Example of scientific questions about the research paper and the chatbot’s responses:
+
+<img src="Fig5_Chatbot.png" width="700" >
+
+The feedback collection interface for gathering user satisfaction data includes a rating slider, comment field, andsubmission button:
+
+<img src="Fig6_Chatbot.png" width="700" >
+
 ## 🔬 Technical Implementation
 
 ### Retrieval-Augmented Generation (RAG) Architecture
