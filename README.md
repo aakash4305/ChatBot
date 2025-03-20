@@ -106,13 +106,11 @@ vllm serve OpenGVLab/InternVL2_5-8B-MPO-AWQ --trust-remote-code --quantization a
 uv run main.py -m OpenGVLab/InternVL2_5-8B-MPO-AWQ --pdf-file SlamonetalSCIENCE1987.pdf --use-llm-eval
 ```
 
-3. Open your web browser and navigate to the URL displayed in the terminal (typically http://localhost:8001).
-
-4. Open your web browser and navigate to the URLs displayed in the terminal:
+3. Open your web browser and navigate to the URLs displayed in the terminal:
    - Local URL: http://127.0.0.1:8001
    - Public URL: https://b9504b4be062d8209.gradio.live (your actual URL may differ)
 
-5. Enter your questions about the research paper in the input field and receive comprehensive answers.
+4. Enter your questions about the research paper in the input field and receive comprehensive answers.
 
 ## 📊 Detailed Evaluation System
 
